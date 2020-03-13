@@ -7,9 +7,11 @@ This will be a piece of software that can create Dungeons and Dragons characters
 * The app should allow the player to create new Characters.
 * The app should allow the player to create new Campaigns.
 * The app should allow the player to view and edit currently created Characters in a separate view.
+* The app should be able to display all Campaigns as well as Characters assigned to Campaigns.
 * The app should allow Characters to be grouped by Campaign.
 * The app should allow the player to delete Characters from Campaigns.
 * The app should allow the player to view current Campaigns.
+* The app should allow the player to edit and delete Campaigns.
 
 ## Extensions
 
