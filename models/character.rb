@@ -101,4 +101,18 @@ class Character
     SqlRunner.run(sql)
   end
 
+  def self.find_by_id(id)
+    sql = "SELECT * FROM characters
+           WHERE id = $1"
+    values = [id]
+    result = SqlRunner.run(sql, values)
+    return result.map { |character| Character.new(character) }.first() # Returns hash
+  end
+
+  def self.find_all()
+    sql = "SELECT * FROM characters"
+    result = SqlRunner.run(sql)
+    return result.map { |character| Character.new(character) } # Returns array of hashes
+  end
+
 end
