@@ -60,17 +60,10 @@ class Character
   def self.get_character_variable_lists()
     # List of character instance variables, as a string
     @@character_var_list = "name, char_class, level, race, background, alignment, xp_points, strength, dexterity, constitution, intelligence, wisdom, charisma, armour_class, initiative, speed, hp_max, current_hp, temp_hp, total_hit_dice, current_hit_dice, death_saves, weapons, other_attacks_and_spells, cp, sp, ep, gp, pp, other_equipment, armour_profs, weapon_profs, tool_profs, saving_throw_profs, skill_profs, language_profs, personality, ideals, bonds, flaws"
-    # List of character instance variables, as array
-    @@character_instance_variables = [@name, @char_class, @level, @race, @background, @alignment, @xp_points, @strength, @dexterity, @constitution, @intelligence, @wisdom, @charisma, @armour_class, @initiative, @speed, @hp_max, @current_hp, @temp_hp, @total_hit_dice, @current_hit_dice, @death_saves, @weapons, @other_attacks_and_spells, @cp, @sp, @ep, @gp, @pp, @other_equipment, @armour_profs, @weapon_profs, @tool_profs, @saving_throw_profs, @skill_profs, @language_profs, @personality, @ideals, @bonds, @flaws]
-    # List of character instance variables, as array, with id
-    character_instance_variables_clone = @@character_instance_variables.dup()
-    @@character_instance_variables_with_id = character_instance_variables_clone.push(@id)
     # List of SQL insertion values
     @@character_var_values = []
     @@character_var_list.split(",").each_with_index { |variable, index| @@character_var_values.push("$#{index + 1}") }
-    @@character_var_values = @@character_var_values.join(", ")
-    # ID value at end of instance variable list
-    @@character_id_value = @@character_instance_variables.count() + 1
+    @@character_var_values_string = @@character_var_values.join(", ")
   end
 
   def save()
@@ -78,9 +71,9 @@ class Character
     sql = "INSERT INTO characters
                    (#{@@character_var_list})
                    VALUES
-                   (#{@@character_var_values})
+                   (#{@@character_var_values_string})
                    RETURNING id"
-    values = @@character_instance_variables
+    values = [@name, @char_class, @level, @race, @background, @alignment, @xp_points, @strength, @dexterity, @constitution, @intelligence, @wisdom, @charisma, @armour_class, @initiative, @speed, @hp_max, @current_hp, @temp_hp, @total_hit_dice, @current_hit_dice, @death_saves, @weapons, @other_attacks_and_spells, @cp, @sp, @ep, @gp, @pp, @other_equipment, @armour_profs, @weapon_profs, @tool_profs, @saving_throw_profs, @skill_profs, @language_profs, @personality, @ideals, @bonds, @flaws]
     @id = SqlRunner.run(sql, values).first['id'].to_i
   end
 
@@ -89,9 +82,10 @@ class Character
     sql = "UPDATE characters
            SET (#{@@character_var_list})
            =
-           (#{@@character_var_values})
-           WHERE id = $#{@@character_id_value}"
-    values = @@character_instance_variables_with_id
+           (#{@@character_var_values_string})
+           WHERE id = $#{@@character_var_values.count() + 1}"
+    values = [@name, @char_class, @level, @race, @background, @alignment, @xp_points, @strength, @dexterity, @constitution, @intelligence, @wisdom, @charisma, @armour_class, @initiative, @speed, @hp_max, @current_hp, @temp_hp, @total_hit_dice, @current_hit_dice, @death_saves, @weapons, @other_attacks_and_spells, @cp, @sp, @ep, @gp, @pp, @other_equipment, @armour_profs, @weapon_profs, @tool_profs, @saving_throw_profs, @skill_profs, @language_profs, @personality, @ideals, @bonds, @flaws,
+      @id]
     SqlRunner.run(sql, values)
   end
 
@@ -100,6 +94,11 @@ class Character
            WHERE id = $1"
     values = [@id]
     SqlRunner.run(sql, values)
+  end
+
+  def self.delete_all()
+    sql = "DELETE FROM characters"
+    SqlRunner.run(sql)
   end
 
 end

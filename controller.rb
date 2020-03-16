@@ -2,7 +2,9 @@ require('pry')
 require_relative('./db/sql_runner.rb')
 require_relative('./models/character.rb')
 
-character1 = Character.new(
+Character.delete_all()
+
+character2 = Character.new(
   {
     'name' => 'Kyus Mallock',
     'char_class' => 'Rogue',
@@ -10,12 +12,10 @@ character1 = Character.new(
     'alignment' => 'Chaotic Good'
   }
 )
-character1.save()
+character2.save()
 
-character1.race = "Dwarf"
-character1.update()
-
-character1.delete()
+character2.race = "Dwarf"
+character2.update()
 
 binding.pry
 nil
