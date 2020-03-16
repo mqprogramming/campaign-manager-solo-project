@@ -1,4 +1,5 @@
 require_relative('../db/sql_runner.rb')
+require_relative('character.rb')
 
 class Campaign
 
@@ -54,6 +55,16 @@ class Campaign
     sql = "SELECT * FROM campaigns"
     result = SqlRunner.run(sql)
     return result.map { |campaign| Campaign.new(campaign) } # Returns array of hashes
+  end
+
+  def characters()
+    sql = "SELECT * FROM characters
+           INNER JOIN assignments
+           ON character_id = characters.id
+           WHERE campaign_id = $1"
+    values = [@id]
+    result = SqlRunner.run(sql, values)
+    return result.map { |character| Character.new(character) } # Returns array of hashes
   end
 
 end
