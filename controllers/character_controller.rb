@@ -27,6 +27,7 @@ end
 
 # Show
 get '/characters/:id' do
+  @character = Character.find_by_id(params[:id])
   erb(:"characters/show")
 end
 
