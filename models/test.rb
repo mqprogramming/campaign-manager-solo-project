@@ -17,7 +17,7 @@ nil
 # Assignment.delete_all()
 # Character.delete_all()
 # Campaign.delete_all()
-
+#
 # character1 = Character.new(
 #   {
 #     'name' => 'Kyus Mallock',
@@ -44,7 +44,7 @@ nil
 #   }
 # )
 # character3.save()
-
+#
 # campaign1 = Campaign.new(
 #   {
 #     'name' => 'The Dread Seas',
@@ -57,7 +57,7 @@ nil
 #   }
 # )
 # campaign2.save()
-
+#
 # assignment1 = Assignment.new(
 #   {
 #     'character_id' => character1.id,
@@ -86,6 +86,6 @@ nil
 #   }
 # )
 # assignment4.save()
-
+#
 # binding.pry
 # nil
