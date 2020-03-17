@@ -11,7 +11,7 @@ also_reload('../models/*')
 
 # Index
 get '/characters' do
-  @characters =
+  @characters = Character.find_all
   erb(:"characters/index")
 end
 

@@ -1,3 +1,32 @@
 <h1>Players List</h1>
 
-<% for character in @characters %>
+<div style="width:600px; height:350px; line-height:2em; overflow:auto; padding:5px;">
+  <% for character in @characters %>
+    <p>
+      <ul>
+        Name: <%= character.name %>
+      </ul>
+      <ul>
+        Race: <%= character.race %>
+      </ul>
+      <ul>
+        Class: <%= character.char_class %>
+      </ul>
+      <ul>
+        Level: <%= character.level %>
+      </ul>
+      <ul>
+        <form action="/" method="get">
+          <button type="submit">View Character</button>
+        </form>
+        <form action="/" method="get">
+          <button type="submit">Edit Character</button>
+        </form>
+        <form action="/" method="get">
+          <button type="submit">Delete Character</button>
+        </form>
+      </ul>
+    </p>
+    <hr>
+  <% end %>
+</div>
