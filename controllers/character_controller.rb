@@ -10,36 +10,37 @@ require_relative('../models/assignment.rb')
 also_reload('../models/*')
 
 # Index
-get '/players' do
-  erb(:"players/index")
+get '/characters' do
+  @characters =
+  erb(:"characters/index")
 end
 
 # New
-get '/players/new' do
-  erb(:"players/new")
+get '/characters/new' do
+  erb(:"characters/new")
 end
 
 # Create
-post '/players/' do
+post '/characters/' do
 
 end
 
 # Show
-get '/players/:id' do
-  erb(:"players/show")
+get '/characters/:id' do
+  erb(:"characters/show")
 end
 
 # Edit
-get '/players/:id/edit' do
-  erb(:"players/edit")
+get '/characters/:id/edit' do
+  erb(:"characters/edit")
 end
 
 # Update
-put '/players/:id' do
+put '/characters/:id' do
 
 end
 
 # Destroy
-delete '/players/:id' do
-  
+delete '/characters/:id' do
+
 end
