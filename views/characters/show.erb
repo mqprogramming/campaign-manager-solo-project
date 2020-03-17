@@ -1,1 +1,142 @@
 <h1><%= @character.name %></h1>
+
+<p>
+  <ul>
+    <h3>Stats</h3>
+  </ul>
+  <ul>Strength: <%= @character.strength %>
+    <%= (@character.strength - 10) / 2 %>
+  </ul>
+  <ul>Dexterity: <%= @character.dexterity %>
+    <%= (@character.dexterity - 10) / 2 %>
+  </ul>
+  <ul>Constitution: <%= @character.constitution %>
+    <%= (@character.constitution - 10) / 2 %>
+  </ul>
+  <ul>Intelligence: <%= @character.intelligence %>
+    <%= (@character.intelligence - 10) / 2 %>
+  </ul>
+  <ul>Wisdom: <%= @character.wisdom %>
+    <%= (@character.wisdom - 10) / 2 %>
+  </ul>
+  <ul>Charisma: <%= @character.charisma %>
+    <%= (@character.charisma - 10) / 2 %>
+  </ul>
+</p>
+
+<p>
+  <ul><h3>Proficiency Bonus </h3>+NUM</ul>
+  <ul>
+    <h3>Saving Throws</h3>
+    <table>
+      <tr>
+        <td><%= (@character.strength - 10) / 2 %></td>
+        <td>Strength</td>
+      </tr>
+      <tr>
+        <td><%= (@character.dexterity - 10) / 2 %></td>
+        <td>Dexterity</td>
+      </tr>
+      <tr>
+        <td><%= (@character.constitution - 10) / 2 %></td>
+        <td>Constitution</td>
+      </tr>
+      <tr>
+        <td><%= (@character.intelligence - 10) / 2 %></td>
+        <td>Intelligence</td>
+      </tr>
+      <tr>
+        <td><%= (@character.wisdom - 10) / 2 %></td>
+        <td>Wisdom</td>
+      </tr>
+      <tr>
+        <td><%= (@character.charisma - 10) / 2 %></td>
+        <td>Charisma</td>
+      </tr>
+    </table>
+  </ul>
+  <ul>
+    <h3>Skills:</h3>
+    <table>
+      <tr>
+        <td><%= (@character.dexterity - 10) / 2 %></td>
+        <td>Acrobatics</td>
+      </tr>
+      <tr>
+        <td><%= (@character.wisdom - 10) / 2 %></td>
+        <td>Animal Handling</td>
+      </tr>
+      <tr>
+        <td><%= (@character.intelligence - 10) / 2 %></td>
+        <td>Arcana</td>
+      </tr>
+      <tr>
+        <td><%= (@character.strength - 10) / 2 %></td>
+        <td>Athletics</td>
+      </tr>
+      <tr>
+        <td><%= (@character.charisma - 10) / 2 %></td>
+        <td>Deception</td>
+      </tr>
+      <tr>
+        <td><%= (@character.intelligence - 10) / 2 %></td>
+        <td>History</td>
+      </tr>
+      <tr>
+        <td><%= (@character.wisdom - 10) / 2 %></td>
+        <td>Insight</td>
+      </tr>
+      <tr>
+        <td><%= (@character.charisma - 10) / 2 %></td>
+        <td>Intimidation</td>
+      </tr>
+      <tr>
+        <td><%= (@character.intelligence - 10) / 2 %></td>
+        <td>Investigation</td>
+      </tr>
+      <tr>
+        <td><%= (@character.wisdom - 10) / 2 %></td>
+        <td>Medicine</td>
+      </tr>
+      <tr>
+        <td><%= (@character.intelligence - 10) / 2 %></td>
+        <td>Nature</td>
+      </tr>
+      <tr>
+        <td><%= (@character.wisdom - 10) / 2 %></td>
+        <td>Perception</td>
+      </tr>
+      <tr>
+        <td><%= (@character.charisma - 10) / 2 %></td>
+        <td>Performance</td>
+      </tr>
+      <tr>
+        <td><%= (@character.charisma - 10) / 2 %></td>
+        <td>Persuasion</td>
+      </tr>
+      <tr>
+        <td><%= (@character.intelligence - 10) / 2 %></td>
+        <td>Religion</td>
+      </tr>
+      <tr>
+        <td><%= (@character.dexterity - 10) / 2 %></td>
+        <td>Sleight of Hand</td>
+      </tr>
+      <tr>
+        <td><%= (@character.dexterity - 10) / 2 %></td>
+        <td>Stealth</td>
+      </tr>
+      <tr>
+        <td><%= (@character.wisdom - 10) / 2 %></td>
+        <td>Survival</td>
+      </tr>
+    </table>
+  </ul>
+</p>
+
+<p>
+  <ul>
+    <h3>Proficiencies and Languages</h3>
+  </ul>
+  
+</p>
