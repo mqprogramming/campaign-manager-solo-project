@@ -1,6 +1,15 @@
 <h1><%= @character.name %></h1>
 
 <p>
+  <ul>Class: <%= @character.char_class %></ul>
+  <ul>Level: <%= @character.level %></ul>
+  <ul>Race: <%= @character.race %></ul>
+  <ul>Background: <%= @character.background %></ul>
+  <ul>Alignment: <%= @character.alignment %></ul>
+  <ul>XP: <%= @character.xp_points %></ul>
+</p>
+
+<p>
   <ul>
     <h3>Stats</h3>
   </ul>
@@ -56,7 +65,7 @@
     </table>
   </ul>
   <ul>
-    <h3>Skills:</h3>
+    <h3>Skills</h3>
     <table>
       <tr>
         <td><%= (@character.dexterity - 10) / 2 %></td>
@@ -149,21 +158,21 @@
 </p>
 
 <p>
-  <ul><h3>AC</h3><%= @character.armour_class %></ul>
-  <ul><h3>Initiative</h3><%= @character.initiative %></ul>
-  <ul><h3>Speed</h3><%= @character.speed %></ul>
+  <ul>AC: <%= @character.armour_class %></ul>
+  <ul>Initiative: <%= @character.initiative %></ul>
+  <ul>Speed: <%= @character.speed %></ul>
 </p>
 
 <p>
-  <ul><h3>Max HP</h3><%= @character.hp_max %></ul>
-  <ul><h3>Current HP</h3><%= @character.current_hp %></ul>
-  <ul><h3>Temporary HP</h3><%= @character.temp_hp %></ul>
+  <ul>Max HP: <%= @character.hp_max %></ul>
+  <ul>Current HP: <%= @character.current_hp %></ul>
+  <ul>Temporary HP: <%= @character.temp_hp %></ul>
 </p>
 
 <p>
-  <ul><h3>Total Hit Dice</h3><%= @character.total_hit_dice %></ul>
-  <ul><h3>Current Hit Dice</h3><%= @character.current_hit_dice %></ul>
-  <ul><h3>Death Saves</h3><%= @character.death_saves %></ul>
+  <ul>Total Hit Dice: <%= @character.total_hit_dice %></ul>
+  <ul>Current Hit Dice: <%= @character.current_hit_dice %></ul>
+  <ul>Death Saves: <%= @character.death_saves %></ul>
 </p>
 
 <p>
@@ -182,13 +191,12 @@
   <ul>
     <h3>Equipment</h3>
   </ul>
-  <ul><h4>cp</h4><%= @character.cp %></ul>
-  <ul><h4>sp</h4><%= @character.sp %></ul>
-  <ul><h4>ep</h4><%= @character.ep %></ul>
-  <ul><h4>gp</h4><%= @character.gp %></ul>
-  <ul><h4>pp</h4><%= @character.pp %></ul>
+  <ul>cp: <%= @character.cp %></ul>
+  <ul>sp: <%= @character.sp %></ul>
+  <ul>ep: <%= @character.ep %></ul>
+  <ul>gp: <%= @character.gp %></ul>
+  <ul>pp: <%= @character.pp %></ul>
   <ul>
-    <h4>Other Equipment</h4>
     <div style="width:600px; height:100px; line-height:1em; overflow:auto; padding:5px;">
       <%= @character.other_equipment %>
     </div>
