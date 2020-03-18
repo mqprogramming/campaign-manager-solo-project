@@ -38,15 +38,9 @@ post '/characters/newpg3' do
   erb(:"characters/new/newpg4")
 end
 
-# New - Page Five
-post '/characters/newpg4' do
-  @@parameters4 = @@parameters3.merge(params)
-  erb(:"characters/new/complete")
-end
-
-# New - Complete
-post '/characters/complete' do
-  full_params = @@parameters4.merge(params)
+# Created
+post '/characters/created' do
+  full_params = @@parameters3.merge(params)
   @new_character = Character.new(full_params)
   @new_character.save()
   erb(:"characters/created")
