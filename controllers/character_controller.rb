@@ -65,6 +65,7 @@ end
 # Destroy
 post '/characters/:id/delete' do
   character = Character.find_by_id(params[:id])
-  character.delete()
+  character.first.delete_from_assignments
+  character.first.delete
   redirect '/characters'
 end

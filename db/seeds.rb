@@ -189,3 +189,8 @@ assignment4 = Assignment.new(
   }
 )
 assignment4.save()
+
+character = Character.find_by_id(14).first
+
+binding.pry
+nil

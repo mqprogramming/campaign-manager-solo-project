@@ -91,6 +91,13 @@ class Character
     SqlRunner.run(sql, values)
   end
 
+  def delete_from_assignments()
+    sql = "DELETE FROM assignments
+           WHERE character_id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
+
   def delete()
     sql = "DELETE FROM characters
            WHERE id = $1"
@@ -108,7 +115,7 @@ class Character
            WHERE id = $1"
     values = [id]
     result = SqlRunner.run(sql, values)
-    return result.map { |character| Character.new(character) }.first() # Returns hash
+    return = result.map { |character| Character.new(character) }.first()
   end
 
   def self.find_all()
