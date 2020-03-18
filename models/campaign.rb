@@ -6,7 +6,7 @@ class Campaign
   attr_accessor :name
   attr_reader :id
 
-  def initialize ( options )
+  def initialize(options)
     # id
     @id = options['id'].to_i if options['id']
     # core details
@@ -38,6 +38,13 @@ class Campaign
     SqlRunner.run(sql, values)
   end
 
+  def delete_from_assignments()
+    sql = "DELETE FROM assignments
+           WHERE campaign_id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
+
   def self.delete_all()
     sql = "DELETE FROM campaigns"
     SqlRunner.run(sql)
@@ -48,7 +55,10 @@ class Campaign
            WHERE id = $1"
     values = [id]
     result = SqlRunner.run(sql, values)
-    return result.map { |campaign| Campaign.new(campaign) }.first() # Returns hash
+    result2 = result.map do |campaign| 
+      Campaign.new(campaign)
+    end
+    return result2.first
   end
 
   def self.find_all()

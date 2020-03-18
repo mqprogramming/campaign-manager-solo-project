@@ -1,5 +1,9 @@
 <h1><%= @character.name %></h1>
 
+<form action="/characters/<%= @character.id %>/edit" method="get">
+  <button type="submit">Edit Character</button>
+</form>
+
 <p>
   <ul>Class: <%= @character.char_class %></ul>
   <ul>Level: <%= @character.level %></ul>
