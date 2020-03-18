@@ -21,7 +21,7 @@ get '/characters/new' do
 end
 
 # Create
-post '/characters/' do
+post '/characters' do
 
 end
 
