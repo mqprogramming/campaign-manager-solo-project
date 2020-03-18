@@ -138,5 +138,54 @@
   <ul>
     <h3>Proficiencies and Languages</h3>
   </ul>
-  
+  <div style="width:600px; height:200px; line-height:1em; overflow:auto; padding:5px;">
+    <ul>Armour: <%= @character.armour_profs %></ul>
+    <ul>Weapons: <%= @character.weapon_profs %></ul>
+    <ul>Tools: <%= @character.tool_profs %></ul>
+    <ul>Saving Throws: <%= @character.saving_throw_profs %></ul>
+    <ul>Skills: <%= @character.skill_profs %></ul>
+    <ul>Languages: <%= @character.language_profs %></ul>
+  </div>
+</p>
+
+<p>
+  <ul><h3>AC</h3><%= @character.armour_class %></ul>
+  <ul><h3>Initiative</h3><%= @character.initiative %></ul>
+  <ul><h3>Speed</h3><%= @character.speed %></ul>
+</p>
+
+<p>
+  <ul><h3>Max HP</h3><%= @character.hp_max %></ul>
+  <ul><h3>Current HP</h3><%= @character.current_hp %></ul>
+  <ul><h3>Temporary HP</h3><%= @character.temp_hp %></ul>
+</p>
+
+<p>
+  <ul><h3>Total Hit Dice</h3><%= @character.total_hit_dice %></ul>
+  <ul><h3>Current Hit Dice</h3><%= @character.current_hit_dice %></ul>
+  <ul><h3>Death Saves</h3><%= @character.death_saves %></ul>
+</p>
+
+<p>
+  <ul>
+    <h3>Attacks and Spells</h3>
+  </ul>
+  <ul><h3>Weapons</h3><%= @character.weapons %></ul>
+  <div style="width:600px; height:200px; line-height:1em; overflow:auto; padding:5px;">
+    <%= @character.other_attacks_and_spells %>
+  </div>
+</p>
+
+<p>
+  <ul>
+    <h3>Equipment</h3>
+  </ul>
+  <ul><h4>cp</h4><%= @character.weapons %></ul>
+  <ul><h4>sp</h4><%= @character.weapons %></ul>
+  <ul><h4>ep</h4><%= @character.weapons %></ul>
+  <ul><h4>gp</h4><%= @character.weapons %></ul>
+  <ul><h4>pp</h4><%= @character.weapons %></ul>
+  <div style="width:600px; height:200px; line-height:1em; overflow:auto; padding:5px;">
+    <%= @character.other_attacks_and_spells %>
+  </div>
 </p>
