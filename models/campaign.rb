@@ -68,7 +68,7 @@ class Campaign
   end
 
   def characters()
-    sql = "SELECT * FROM characters
+    sql = "SELECT characters.* FROM characters
            INNER JOIN assignments
            ON character_id = characters.id
            WHERE campaign_id = $1"

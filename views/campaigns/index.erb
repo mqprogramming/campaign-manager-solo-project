@@ -1,11 +1,19 @@
 <h1>Campaign List</h1>
 
-<div style="width:600px; height:350px; line-height:2em; overflow:auto; padding:5px;">
+<div style="width:600px; height:350px; line-height:1em; overflow:auto; padding:5px;">
   <% for campaign in @campaigns %>
     <p>
       <ul>
         Name: <%= campaign.name %>
       </ul>
+      <ul>
+        <h4>Characters</h4>
+      </ul>
+      <% for character in campaign.characters() %>
+      <ul>
+        <a href="/characters/<%= character.id %>"><%= character.name %></a>
+      </ul>
+      <% end %>
       <ul>
         <form action="/campaigns/<%= campaign.id %>" method="get">
           <button type="submit">View Campaign</button>
