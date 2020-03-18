@@ -63,6 +63,8 @@ put '/characters/:id' do
 end
 
 # Destroy
-delete '/characters/:id' do
-
+post '/characters/:id/delete' do
+  character = Character.find_by_id(params[:id])
+  character.delete()
+  redirect '/characters'
 end
