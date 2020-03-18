@@ -48,27 +48,27 @@ end
 
 # Show
 get '/characters/:id' do
-  @character = Character.find_by_id(params[:id]).first
+  @character = Character.find_by_id(params[:id])
   erb(:"characters/show")
 end
 
 # Edit
 get '/characters/:id/edit' do
-  @character = Character.find_by_id(params[:id]).first
+  @character = Character.find_by_id(params[:id])
   erb(:"characters/edit")
 end
 
 # Update
-post '/characters/:id' do
-  @character = Character.find_by_id(params[:id]).first()
-  @character.update()
+put '/characters/:id' do
+  some_character = Character.find_by_id(params[:id])
+  some_character.update()
   redirect '/characters'
 end
 
 # Destroy
 post '/characters/:id/delete' do
   character = Character.find_by_id(params[:id])
-  character.first.delete_from_assignments
-  character.first.delete
+  character.delete_from_assignments()
+  character.delete()
   redirect '/characters'
 end

@@ -80,12 +80,12 @@ class Character
   end
 
   def update()
-    Character.get_character_variable_lists()
+    # Character.get_character_variable_lists()
     sql = "UPDATE characters
-           SET (#{@@character_var_list})
+           SET (name, char_class, level, race, background, alignment, xp_points, strength, dexterity, constitution, intelligence, wisdom, charisma, armour_class, initiative, speed, hp_max, current_hp, temp_hp, total_hit_dice, current_hit_dice, death_saves, weapons, other_attacks_and_spells, cp, sp, ep, gp, pp, other_equipment, armour_profs, weapon_profs, tool_profs, saving_throw_profs, skill_profs, language_profs, personality, ideals, bonds, flaws, features)
            =
-           (#{@@character_var_values_string})
-           WHERE id = $#{@@character_var_values.count() + 1}"
+           ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24, $25, $26, $27, $28, $29, $30, $31, $32, $33, $34, $35, $36, $37, $38, $39, $40, $41)
+           WHERE id = $42"
     values = [@name, @char_class, @level, @race, @background, @alignment, @xp_points, @strength, @dexterity, @constitution, @intelligence, @wisdom, @charisma, @armour_class, @initiative, @speed, @hp_max, @current_hp, @temp_hp, @total_hit_dice, @current_hit_dice, @death_saves, @weapons, @other_attacks_and_spells, @cp, @sp, @ep, @gp, @pp, @other_equipment, @armour_profs, @weapon_profs, @tool_profs, @saving_throw_profs, @skill_profs, @language_profs, @personality, @ideals, @bonds, @flaws, @features, @id]
     SqlRunner.run(sql, values)
   end
