@@ -59,9 +59,10 @@ get '/characters/:id/edit' do
 end
 
 # Update
-put '/characters/:id' do
-  @character = Character.find_by_id(params[:id]).first
-  erb(:"characters/show")
+post '/characters/:id' do
+  @character = Character.find_by_id(params[:id]).first()
+  @character.update()
+  redirect '/characters'
 end
 
 # Destroy
