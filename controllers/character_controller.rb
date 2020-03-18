@@ -59,10 +59,10 @@ get '/characters/:id/edit' do
 end
 
 # Update
-put '/characters/:id' do
-  some_character = Character.find_by_id(params[:id])
-  some_character.update()
-  redirect '/characters'
+post '/characters/:id' do
+  character = Character.new(params)
+  character.update()
+  redirect "characters/#{params[:id]}"
 end
 
 # Destroy
