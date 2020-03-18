@@ -2,7 +2,20 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Campaign Manager</title>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/characters">Characters</a></li>
+        <li><a href="/campaigns">Campaigns</a></li>
+        <li>
+          <button onclick="goBack()">Back</button>
+            <script>
+              function goBack() { window.history.back(); }
+            </script>
+          </li>
+      </ul>
+    </nav>
   </head>
   <body>
     <%= yield %>

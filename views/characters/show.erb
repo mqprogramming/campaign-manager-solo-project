@@ -170,10 +170,12 @@
   <ul>
     <h3>Attacks and Spells</h3>
   </ul>
-  <ul><h3>Weapons</h3><%= @character.weapons %></ul>
-  <div style="width:600px; height:100px; line-height:1em; overflow:auto; padding:5px;">
-    <%= @character.other_attacks_and_spells %>
-  </div>
+  <ul>Weapons: <%= @character.weapons %></ul>
+  <ul>
+    <div style="width:600px; height:100px; line-height:1em; overflow:auto; padding:5px;">
+      <%= @character.other_attacks_and_spells %>
+    </div>
+  </ul>
 </p>
 
 <p>
@@ -185,9 +187,12 @@
   <ul><h4>ep</h4><%= @character.ep %></ul>
   <ul><h4>gp</h4><%= @character.gp %></ul>
   <ul><h4>pp</h4><%= @character.pp %></ul>
-  <div style="width:600px; height:100px; line-height:1em; overflow:auto; padding:5px;">
-    <%= @character.other_equipment %>
-  </div>
+  <ul>
+    <h4>Other Equipment</h4>
+    <div style="width:600px; height:100px; line-height:1em; overflow:auto; padding:5px;">
+      <%= @character.other_equipment %>
+    </div>
+  </ul>
 </p>
 
 <p>

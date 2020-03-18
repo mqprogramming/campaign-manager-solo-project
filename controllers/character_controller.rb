@@ -48,18 +48,20 @@ end
 
 # Show
 get '/characters/:id' do
-  @character = Character.find_by_id(params[:id])
+  @character = Character.find_by_id(params[:id]).first
   erb(:"characters/show")
 end
 
 # Edit
 get '/characters/:id/edit' do
+  @character = Character.find_by_id(params[:id]).first
   erb(:"characters/edit")
 end
 
 # Update
 put '/characters/:id' do
-
+  @character = Character.find_by_id(params[:id]).first
+  erb(:"characters/show")
 end
 
 # Destroy

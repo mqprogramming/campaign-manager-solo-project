@@ -115,7 +115,7 @@ class Character
            WHERE id = $1"
     values = [id]
     result = SqlRunner.run(sql, values)
-    return = result.map { |character| Character.new(character) }.first()
+    return result.map { |character| Character.new(character) }.first()
   end
 
   def self.find_all()
