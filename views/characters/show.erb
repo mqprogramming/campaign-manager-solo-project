@@ -171,7 +171,7 @@
     <h3>Attacks and Spells</h3>
   </ul>
   <ul><h3>Weapons</h3><%= @character.weapons %></ul>
-  <div style="width:600px; height:200px; line-height:1em; overflow:auto; padding:5px;">
+  <div style="width:600px; height:100px; line-height:1em; overflow:auto; padding:5px;">
     <%= @character.other_attacks_and_spells %>
   </div>
 </p>
@@ -180,12 +180,46 @@
   <ul>
     <h3>Equipment</h3>
   </ul>
-  <ul><h4>cp</h4><%= @character.weapons %></ul>
-  <ul><h4>sp</h4><%= @character.weapons %></ul>
-  <ul><h4>ep</h4><%= @character.weapons %></ul>
-  <ul><h4>gp</h4><%= @character.weapons %></ul>
-  <ul><h4>pp</h4><%= @character.weapons %></ul>
-  <div style="width:600px; height:200px; line-height:1em; overflow:auto; padding:5px;">
-    <%= @character.other_attacks_and_spells %>
+  <ul><h4>cp</h4><%= @character.cp %></ul>
+  <ul><h4>sp</h4><%= @character.sp %></ul>
+  <ul><h4>ep</h4><%= @character.ep %></ul>
+  <ul><h4>gp</h4><%= @character.gp %></ul>
+  <ul><h4>pp</h4><%= @character.pp %></ul>
+  <div style="width:600px; height:100px; line-height:1em; overflow:auto; padding:5px;">
+    <%= @character.other_equipment %>
   </div>
+</p>
+
+<p>
+  <ul>
+    <h3>Character Details</h3>
+  </ul>
+  <ul>
+    <div style="width:600px; height:100px; line-height:1em; overflow:auto; padding:5px;">
+      Personality: <%= @character.personality %>
+    </div>
+    <div style="width:600px; height:100px; line-height:1em; overflow:auto; padding:5px;">
+      Ideals: <%= @character.ideals %>
+    </div>
+    <div style="width:600px; height:100px; line-height:1em; overflow:auto; padding:5px;">
+      Bonds: <%= @character.bonds %>
+    </div>
+    <div style="width:600px; height:100px; line-height:1em; overflow:auto; padding:5px;">
+      Flaws: <%= @character.flaws %>
+    </div>
+    <div style="width:600px; height:100px; line-height:1em; overflow:auto; padding:5px;">
+      Flaws: <%= @character.flaws %>
+    </div>
+  </ul>
+</p>
+
+<p>
+  <ul>
+    <h3>Features and Traits</h3>
+  </ul>
+  <ul>
+    <div style="width:600px; height:200px; line-height:1em; overflow:auto; padding:5px;">
+      <%= @character.features %>
+    </div>
+  </ul>
 </p>

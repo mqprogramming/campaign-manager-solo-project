@@ -3,7 +3,7 @@ require_relative('campaign.rb')
 
 class Character
 
-  attr_accessor :name, :char_class, :level, :race, :background, :alignment, :xp_points, :strength, :dexterity, :constitution, :intelligence, :wisdom, :charisma, :armour_class, :initiative, :speed, :hp_max, :current_hp, :temp_hp, :total_hit_dice, :current_hit_dice, :death_saves, :weapons, :other_attacks_and_spells, :cp, :sp, :ep, :gp, :pp, :other_equipment, :armour_profs, :weapon_profs, :tool_profs, :saving_throw_profs, :skill_profs, :language_profs, :personality, :ideals, :bonds, :flaws
+  attr_accessor :name, :char_class, :level, :race, :background, :alignment, :xp_points, :strength, :dexterity, :constitution, :intelligence, :wisdom, :charisma, :armour_class, :initiative, :speed, :hp_max, :current_hp, :temp_hp, :total_hit_dice, :current_hit_dice, :death_saves, :weapons, :other_attacks_and_spells, :cp, :sp, :ep, :gp, :pp, :other_equipment, :armour_profs, :weapon_profs, :tool_profs, :saving_throw_profs, :skill_profs, :language_profs, :personality, :ideals, :bonds, :flaws, :features
   attr_reader :id
 
   def initialize ( options )
@@ -56,11 +56,12 @@ class Character
     @ideals = options['ideals']
     @bonds = options['bonds']
     @flaws = options['flaws']
+    @features = options['features']
   end
 
   def self.get_character_variable_lists()
     # List of character instance variables, as a string
-    @@character_var_list = "name, char_class, level, race, background, alignment, xp_points, strength, dexterity, constitution, intelligence, wisdom, charisma, armour_class, initiative, speed, hp_max, current_hp, temp_hp, total_hit_dice, current_hit_dice, death_saves, weapons, other_attacks_and_spells, cp, sp, ep, gp, pp, other_equipment, armour_profs, weapon_profs, tool_profs, saving_throw_profs, skill_profs, language_profs, personality, ideals, bonds, flaws"
+    @@character_var_list = "name, char_class, level, race, background, alignment, xp_points, strength, dexterity, constitution, intelligence, wisdom, charisma, armour_class, initiative, speed, hp_max, current_hp, temp_hp, total_hit_dice, current_hit_dice, death_saves, weapons, other_attacks_and_spells, cp, sp, ep, gp, pp, other_equipment, armour_profs, weapon_profs, tool_profs, saving_throw_profs, skill_profs, language_profs, personality, ideals, bonds, flaws, features"
     # List of SQL insertion values
     @@character_var_values = []
     @@character_var_list.split(",").each_with_index { |variable, index| @@character_var_values.push("$#{index + 1}") }
@@ -74,7 +75,7 @@ class Character
                    VALUES
                    (#{@@character_var_values_string})
                    RETURNING id"
-    values = [@name, @char_class, @level, @race, @background, @alignment, @xp_points, @strength, @dexterity, @constitution, @intelligence, @wisdom, @charisma, @armour_class, @initiative, @speed, @hp_max, @current_hp, @temp_hp, @total_hit_dice, @current_hit_dice, @death_saves, @weapons, @other_attacks_and_spells, @cp, @sp, @ep, @gp, @pp, @other_equipment, @armour_profs, @weapon_profs, @tool_profs, @saving_throw_profs, @skill_profs, @language_profs, @personality, @ideals, @bonds, @flaws]
+    values = [@name, @char_class, @level, @race, @background, @alignment, @xp_points, @strength, @dexterity, @constitution, @intelligence, @wisdom, @charisma, @armour_class, @initiative, @speed, @hp_max, @current_hp, @temp_hp, @total_hit_dice, @current_hit_dice, @death_saves, @weapons, @other_attacks_and_spells, @cp, @sp, @ep, @gp, @pp, @other_equipment, @armour_profs, @weapon_profs, @tool_profs, @saving_throw_profs, @skill_profs, @language_profs, @personality, @ideals, @bonds, @flaws, @features]
     @id = SqlRunner.run(sql, values).first['id'].to_i
   end
 
@@ -85,7 +86,7 @@ class Character
            =
            (#{@@character_var_values_string})
            WHERE id = $#{@@character_var_values.count() + 1}"
-    values = [@name, @char_class, @level, @race, @background, @alignment, @xp_points, @strength, @dexterity, @constitution, @intelligence, @wisdom, @charisma, @armour_class, @initiative, @speed, @hp_max, @current_hp, @temp_hp, @total_hit_dice, @current_hit_dice, @death_saves, @weapons, @other_attacks_and_spells, @cp, @sp, @ep, @gp, @pp, @other_equipment, @armour_profs, @weapon_profs, @tool_profs, @saving_throw_profs, @skill_profs, @language_profs, @personality, @ideals, @bonds, @flaws,
+    values = [@name, @char_class, @level, @race, @background, @alignment, @xp_points, @strength, @dexterity, @constitution, @intelligence, @wisdom, @charisma, @armour_class, @initiative, @speed, @hp_max, @current_hp, @temp_hp, @total_hit_dice, @current_hit_dice, @death_saves, @weapons, @other_attacks_and_spells, @cp, @sp, @ep, @gp, @pp, @other_equipment, @armour_profs, @weapon_profs, @tool_profs, @saving_throw_profs, @skill_profs, @language_profs, @personality, @ideals, @bonds, @flaws, @features,
       @id]
     SqlRunner.run(sql, values)
   end

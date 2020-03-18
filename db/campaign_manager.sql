@@ -51,7 +51,8 @@ CREATE TABLE characters (
   personality TEXT,
   ideals TEXT,
   bonds TEXT,
-  flaws TEXT
+  flaws TEXT,
+  features TEXT
 );
 
 CREATE TABLE campaigns (
