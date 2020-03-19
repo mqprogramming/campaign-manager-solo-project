@@ -1,0 +1,99 @@
+body {
+  background-color: #384E77;
+}
+
+h1 {
+  color: #8BBEB2;
+  text-align: center;
+  font-family: 'Sen', sans-serif;
+}
+
+h2 {
+  color: #8BBEB2;
+  text-align: center;
+  font-family: 'Sen', sans-serif;
+}
+
+a:link {
+  color: #8BBEB2;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #8BBEB2;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #E6F9AF;
+  text-decoration: none;
+}
+
+#ulink {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  border: 2px double;
+  border-color: #0D0630;
+}
+
+li {
+  float: left;
+  font-family: 'Monserrat', sans-serif;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+
+.general {
+  color: #8BBEB2;
+  font-family: 'Monserrat', sans-serif;
+  font-size: 15px;
+}
+
+#scrollbox {
+  width: 50%; 
+  height: 300px; 
+  margin: auto;
+  padding: 5px;
+
+  line-height: 1em; 
+  overflow: auto; 
+
+  background-color: #18314F; 
+  color: #8BBEB2; 
+  border: 4px double #0D0630;
+}
+
+.button {
+  background-color: #E6F9AF;
+  border: none;
+  border-radius: 4px;
+  color: #384E77;
+
+  margin-top: 30px;
+  padding: 10px 20px;
+
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  transition-duration: 0.4s;
+}
+
+.button:hover {
+  background-color: rgb(126, 134, 46);
+  color: rgb(231, 231, 231);
+}

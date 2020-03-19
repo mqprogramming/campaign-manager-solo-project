@@ -1,18 +1,18 @@
 <h1>Character List</h1>
 
-<div style="width:600px; height:350px; line-height:2em; overflow:auto; padding:5px;">
+<div id="scrollbox">
   <% for character in @characters %>
     <p>
-      <ul>
+      <ul class="general">
         Name: <%= character.name %>
       </ul>
-      <ul>
+      <ul class="general">
         Race: <%= character.race %>
       </ul>
-      <ul>
+      <ul class="general">
         Class: <%= character.char_class %>
       </ul>
-      <ul>
+      <ul class="general">
         Level: <%= character.level %>
       </ul>
       <ul>
@@ -28,8 +28,8 @@
   <% end %>
 </div>
 
-<form action="/characters/new" method="get">
-  <button type="submit" style="width:100px; height:50px; margin-top:10px;">
+<form action="/characters/new" method="get" style="margin:auto; width:9%; height:30px">
+  <button type="submit" class="button">
     Create New Character
   </button>
 </form>
