@@ -40,18 +40,18 @@ character1 = Character.new(
     'ep' => '',
     'gp' => 4000,
     'pp' => '',
-    'other_equipment' => 'some',
-    'armour_profs' => '',
-    'weapon_profs' => '',
-    'tool_profs' => '',
-    'saving_throw_profs' => '',
-    'skill_profs' => '',
+    'other_equipment' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis tristique sollicitudin nibh sit amet commodo nulla facilisi. Consequat mauris nunc congue nisi vitae. Sed viverra tellus in hac habitasse platea dictumst vestibulum rhoncus. Viverra justo nec ultrices dui sapien. Porta lorem mollis aliquam ut porttitor leo a diam. Risus at ultrices mi tempus imperdiet. Vulputate dignissim suspendisse in est ante in nibh mauris cursus. Sed sed risus pretium quam vulputate dignissim suspendisse. Felis bibendum ut tristique et egestas quis ipsum suspendisse ultrices. Nec ultrices dui sapien eget mi proin sed libero enim. Sit amet volutpat consequat mauris nunc. Faucibus purus in massa tempor nec. Non blandit massa enim nec dui. Fringilla est ullamcorper eget nulla facilisi etiam. Malesuada nunc vel risus commodo viverra maecenas accumsan. Pharetra convallis posuere morbi leo urna molestie at elementum.',
+    'armour_profs' => 'suspendisse. Felis bibendum ut tristique et',
+    'weapon_profs' => 'suspendisse. Felis bibendum ut tristique et',
+    'tool_profs' => 'suspendisse in est ante in nibh mauris cursus. Sed sed risus pretium quam vulputate dignissim suspendisse. Felis bibendum ut tristi',
+    'saving_throw_profs' => 'es. Nec ultrices dui sapien eget mi proin sed libero enim. Sit amet volutpat consequat mauris nunc. Faucibus purus in massa tempor nec. Non blandit massa enim nec dui. Fringilla est ullamcorper eget nulla faci',
+    'skill_profs' => 'Consequat mauris nunc congue nisi vitae. Sed viverra tellus in hac habitasse platea dictumst vestibulum rhoncus. Viverra justo nec ultrices dui sapien. Porta lorem mollis aliquam ut porttitor leo a diam.',
     'language_profs' => '',
     'personality' => 'cool',
-    'ideals' => '',
-    'bonds' => '',
+    'ideals' => 'mauris nunc. Faucibus puru',
+    'bonds' => 'mauris nunc. Faucibus puru',
     'flaws' => 'none',
-    'features' => 'idk'
+    'features' => 'nsequat mauris nunc congue nisi vitae. Sed viverra tellus in hac habitasse platea dictumst vestibulum rhoncus. Viverra justo nec ultrices dui sapien. Porta lorem mollis aliquam ut porttitor leo a diam. Risus at ultrices mi tempus imperdiet. Vulputate dignissim suspendisse in est ante in nibh mauris cursus. Sed sed risus pretium quam vulputate dignissim suspendisse. Felis bibendum ut tristique et egestas quis ipsum suspendisse ultrices. Nec ultrices dui sapien eget'
   }
 )
 character1.save()

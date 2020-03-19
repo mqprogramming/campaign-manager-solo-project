@@ -85,7 +85,7 @@ class Character
            SET (#{@@character_var_list})
            =
            (#{@@character_var_values_string})
-           WHERE id = #{@@character_var_values.count + 1}"
+           WHERE id = $#{@@character_var_values.count + 1}"
     values = [@name, @char_class, @level, @race, @background, @alignment, @xp_points, @strength, @dexterity, @constitution, @intelligence, @wisdom, @charisma, @armour_class, @initiative, @speed, @hp_max, @current_hp, @temp_hp, @total_hit_dice, @current_hit_dice, @death_saves, @weapons, @other_attacks_and_spells, @cp, @sp, @ep, @gp, @pp, @other_equipment, @armour_profs, @weapon_profs, @tool_profs, @saving_throw_profs, @skill_profs, @language_profs, @personality, @ideals, @bonds, @flaws, @features, @id]
     SqlRunner.run(sql, values)
   end

@@ -2,16 +2,21 @@ body {
   background-color: #384E77;
 }
 
+#test {
+  color: hotpink;
+}
+
 h1 {
   color: #8BBEB2;
   text-align: center;
   font-family: 'Sen', sans-serif;
+  font-size: 50px;
 }
 
 h2 {
   color: #8BBEB2;
   text-align: center;
-  font-family: 'Sen', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 a:link {

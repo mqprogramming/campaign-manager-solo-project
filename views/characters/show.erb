@@ -5,34 +5,34 @@
 </form>
 
 <p>
-  <ul>Class: <%= @character.char_class %></ul>
-  <ul>Level: <%= @character.level %></ul>
-  <ul>Race: <%= @character.race %></ul>
-  <ul>Background: <%= @character.background %></ul>
-  <ul>Alignment: <%= @character.alignment %></ul>
-  <ul>XP: <%= @character.xp_points %></ul>
+  <ul id="test"><b>Class:</b> <%= @character.char_class %></ul>
+  <ul><b>Level:</b> <%= @character.level %></ul>
+  <ul><b>Race:</b> <%= @character.race %></ul>
+  <ul><b>Background:</b> <%= @character.background %></ul>
+  <ul><b>Alignment:</b> <%= @character.alignment %></ul>
+  <ul><b>XP:</b> <%= @character.xp_points %></ul>
 </p>
 
 <p>
   <ul>
     <h3>Stats</h3>
   </ul>
-  <ul>Strength: <%= @character.strength %>
+  <ul><b>Strength:</b> <%= @character.strength %>
     <%= (@character.strength - 10) / 2 %>
   </ul>
-  <ul>Dexterity: <%= @character.dexterity %>
+  <ul><b>Dexterity:</b> <%= @character.dexterity %>
     <%= (@character.dexterity - 10) / 2 %>
   </ul>
-  <ul>Constitution: <%= @character.constitution %>
+  <ul><b>Constitution:</b> <%= @character.constitution %>
     <%= (@character.constitution - 10) / 2 %>
   </ul>
-  <ul>Intelligence: <%= @character.intelligence %>
+  <ul><b>Intelligence:</b> <%= @character.intelligence %>
     <%= (@character.intelligence - 10) / 2 %>
   </ul>
-  <ul>Wisdom: <%= @character.wisdom %>
+  <ul><b>Wisdom:</b> <%= @character.wisdom %>
     <%= (@character.wisdom - 10) / 2 %>
   </ul>
-  <ul>Charisma: <%= @character.charisma %>
+  <ul><b>Charisma:</b> <%= @character.charisma %>
     <%= (@character.charisma - 10) / 2 %>
   </ul>
 </p>
@@ -152,31 +152,31 @@
     <h3>Proficiencies and Languages</h3>
   </ul>
   <div style="width:600px; height:200px; line-height:1em; overflow:auto; padding:5px;">
-    <ul>Armour: <%= @character.armour_profs %></ul>
-    <ul>Weapons: <%= @character.weapon_profs %></ul>
-    <ul>Tools: <%= @character.tool_profs %></ul>
-    <ul>Saving Throws: <%= @character.saving_throw_profs %></ul>
-    <ul>Skills: <%= @character.skill_profs %></ul>
-    <ul>Languages: <%= @character.language_profs %></ul>
+    <ul><b>Armour:</b> <%= @character.armour_profs %></ul>
+    <ul><b>Weapons:</b> <%= @character.weapon_profs %></ul>
+    <ul><b>Tools:</b> <%= @character.tool_profs %></ul>
+    <ul><b>Saving Throws:</b> <%= @character.saving_throw_profs %></ul>
+    <ul><b>Skills:</b> <%= @character.skill_profs %></ul>
+    <ul><b>Languages:</b> <%= @character.language_profs %></ul>
   </div>
 </p>
 
 <p>
-  <ul>AC: <%= @character.armour_class %></ul>
-  <ul>Initiative: <%= @character.initiative %></ul>
-  <ul>Speed: <%= @character.speed %></ul>
+  <ul><b>AC:</b> <%= @character.armour_class %></ul>
+  <ul><b>Initiative:</b> <%= @character.initiative %></ul>
+  <ul><b>Speed:</b> <%= @character.speed %></ul>
 </p>
 
 <p>
-  <ul>Max HP: <%= @character.hp_max %></ul>
-  <ul>Current HP: <%= @character.current_hp %></ul>
-  <ul>Temporary HP: <%= @character.temp_hp %></ul>
+  <ul><b>Max HP:</b> <%= @character.hp_max %></ul>
+  <ul><b>Current HP:</b> <%= @character.current_hp %></ul>
+  <ul><b>Temporary HP:</b> <%= @character.temp_hp %></ul>
 </p>
 
 <p>
-  <ul>Total Hit Dice: <%= @character.total_hit_dice %></ul>
-  <ul>Current Hit Dice: <%= @character.current_hit_dice %></ul>
-  <ul>Death Saves: <%= @character.death_saves %></ul>
+  <ul><b>Total Hit Dice:</b> <%= @character.total_hit_dice %></ul>
+  <ul><b>Current Hit Dice:</b> <%= @character.current_hit_dice %></ul>
+  <ul><b>Death Saves:</b> <%= @character.death_saves %></ul>
 </p>
 
 <p>
@@ -213,19 +213,16 @@
   </ul>
   <ul>
     <div style="width:600px; height:100px; line-height:1em; overflow:auto; padding:5px;">
-      Personality: <%= @character.personality %>
+      <b>Personality:</b> <%= @character.personality %>
     </div>
     <div style="width:600px; height:100px; line-height:1em; overflow:auto; padding:5px;">
-      Ideals: <%= @character.ideals %>
+      <b>Ideals:</b> <%= @character.ideals %>
     </div>
     <div style="width:600px; height:100px; line-height:1em; overflow:auto; padding:5px;">
-      Bonds: <%= @character.bonds %>
+      <b>Bonds:</b> <%= @character.bonds %>
     </div>
     <div style="width:600px; height:100px; line-height:1em; overflow:auto; padding:5px;">
-      Flaws: <%= @character.flaws %>
-    </div>
-    <div style="width:600px; height:100px; line-height:1em; overflow:auto; padding:5px;">
-      Features & Traits: <%= @character.features %>
+      <b>Flaws:</b> <%= @character.flaws %>
     </div>
   </ul>
 </p>
