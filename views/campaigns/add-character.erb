@@ -1,0 +1,15 @@
+<h3>Add a character: </h3>
+
+<form action="/campaigns/<%= @campaign.id %>/added-character" method="post">
+  <ul>
+    <label for="character">Character</label>
+      <select id="character" name="character_id">
+        <% for character in @characters %>
+        <option value="<%= character.id %>"><%= character.name %></option>
+        <% end %>
+      </select>
+  </ul>
+  <ul>
+    <input type="submit" value="Add">
+  </ul>
+</form>

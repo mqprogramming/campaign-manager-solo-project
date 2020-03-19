@@ -1,5 +1,41 @@
 <h1><%= @campaign.name %></h1>
 
+<h3>Characters</h3>
+<% for character in @campaign.characters() %>
+<ul>
+    <table>
+        <tr>
+            <th></th>
+            <th>Name</th>
+            <th>Class</th>
+            <th>Level</th>
+            <th>Race</th>
+            <th>Background</th>
+            <th>Alignment</th>
+            <th>XP</th>
+        </tr>
+        <tr>
+            <td>
+                <form action="/campaigns/<%= @campaign.id %>/remove-character/<%= character.id %>" method="get">
+                    <button type="submit">Remove</button>
+                </form>
+            </td>
+            <td><a href="/characters/<%= character.id %>"><%= character.name %></a></td>
+            <td><%= character.char_class %></td>
+            <td><%= character.level %></td>
+            <td><%= character.race %></td>
+            <td><%= character.background %></td>
+            <td><%= character.alignment %></td>
+            <td><%= character.xp_points %></td>
+        </tr>
+    </table>
+</ul>
+<% end %>
+
 <form action="/campaigns/<%= @campaign.id %>/edit" method="get">
-  <button type="submit">Edit Campaign</button>
+    <button type="submit">Edit Campaign</button>
+</form>
+
+<form action="/campaigns/<%= @campaign.id %>/add-character" method="get">
+    <button type="submit">Add New Character</button>
 </form>

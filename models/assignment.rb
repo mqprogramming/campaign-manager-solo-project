@@ -2,7 +2,8 @@ require_relative('../db/sql_runner.rb')
 
 class Assignment
 
-  attr_reader :id, :character_id, :campaign_id
+  attr_reader :id
+  attr_accessor :character_id, :campaign_id
 
   def initialize ( options )
     @id = options['id'].to_i if options['id']
@@ -40,6 +41,14 @@ class Assignment
   def self.delete_all()
     sql = "DELETE FROM assignments"
     SqlRunner.run(sql)
+  end
+
+  def self.delete_matching(character_id, campaign_id)
+    sql = "DELETE FROM assignments
+           WHERE character_id = $1 
+           AND campaign_id = $2"
+    values = [character_id, campaign_id]
+    return SqlRunner.run(sql, values)
   end
 
   def self.find_by_id(id)

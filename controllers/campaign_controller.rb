@@ -27,6 +27,30 @@ post '/campaigns/created' do
   erb(:"campaigns/created")
 end
 
+# Add Character
+get '/campaigns/:id/add-character' do
+  @campaign = Campaign.find_by_id(params[:id])
+  @characters = Character.find_all
+  erb(:"campaigns/add-character")
+end
+
+# Assigned Character
+post '/campaigns/:id/added-character' do
+  campaign_hash = {'campaign_id' => params[:id]}
+  full_params = campaign_hash.merge(params)
+  assignment = Assignment.new(full_params)
+  assignment.save()
+  redirect '/campaigns'
+end
+
+# Remove Character
+get '/campaigns/:id/remove-character/:char_id' do
+  campaign_id = params[:id]
+  character_id = params[:char_id]
+  Assignment.delete_matching(character_id, campaign_id)
+  redirect '/campaigns'
+end
+
 # Show
 get '/campaigns/:id' do
   @campaign = Campaign.find_by_id(params[:id])
