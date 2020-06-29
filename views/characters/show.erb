@@ -259,279 +259,54 @@
       
     </div>
     <div class="col-md-4">
-      <h3>Character Details</h3>
-      <div class="scroll-container-small">
-        <b>Personality:</b> <%= @character.personality %>
-      </div>
-      <div class="scroll-container-small">
-        <b>Ideals:</b> <%= @character.ideals %>
-      </div>
-      <div class="scroll-container-small">
-        <b>Bonds:</b> <%= @character.bonds %>
-      </div>
-      <div class="scroll-container-small">
-        <b>Flaws:</b> <%= @character.flaws %>
+
+      <div class="panel panel-default">
+        <div class="panel-heading"><h4>Character Details</h4></div>
+        <div class="panel-body">
+          <div class="scroll-container-small">
+            <b>Personality:</b> <%= @character.personality %>
+          </div>
+          <div class="scroll-container-small">
+            <b>Ideals:</b> <%= @character.ideals %>
+          </div>
+          <div class="scroll-container-small">
+            <b>Bonds:</b> <%= @character.bonds %>
+          </div>
+          <div class="scroll-container-small">
+            <b>Flaws:</b> <%= @character.flaws %>
+          </div>
+        </div>
       </div>
 
-      <h3>Features and Traits</h3>
-      <div class="scroll-container-small">
-        <%= @character.features %>
+      <div class="panel panel-default">
+        <div class="panel-heading"><h4>Features and Traits</h4></div>
+        <div class="panel-body">
+          <div class="scroll-container-small">
+            <%= @character.features %>
+          </div>
+        </div>
+      </div>
+      
+      <div class="panel panel-default">
+        <div class="panel-heading"><h4>Proficiencies and Languages</h4></div>
+        <div class="panel-body">
+          <div class="scroll-container-large">
+            <b>Armour:</b> <%= @character.armour_profs %>
+            <br>
+            <b>Weapons:</b> <%= @character.weapon_profs %>
+            <br>
+            <b>Tools:</b> <%= @character.tool_profs %>
+            <br>
+            <b>Saving Throws:</b> <%= @character.saving_throw_profs %>
+            <br>
+            <b>Skills:</b> <%= @character.skill_profs %>
+            <br>
+            <b>Languages:</b> <%= @character.language_profs %>
+          </div>
+        </div>
       </div>
 
-      <h3>Proficiencies and Languages</h3>
-      <div class="scroll-container-large">
-        <b>Armour:</b> <%= @character.armour_profs %>
-        <br>
-        <b>Weapons:</b> <%= @character.weapon_profs %>
-        <br>
-        <b>Tools:</b> <%= @character.tool_profs %>
-        <br>
-        <b>Saving Throws:</b> <%= @character.saving_throw_profs %>
-        <br>
-        <b>Skills:</b> <%= @character.skill_profs %>
-        <br>
-        <b>Languages:</b> <%= @character.language_profs %>
-      </div>
     </div>
-  </div>
-
-</div>
-
-<hr>
-
-<div class="large-flex">
-  <div class="char-sheet-item">
-    <ul><b>Class:</b> <%= @character.char_class %></ul>
-    <ul><b>Level:</b> <%= @character.level %></ul>
-    <ul><b>Race:</b> <%= @character.race %></ul>
-    <ul><b>Background:</b> <%= @character.background %></ul>
-    <ul><b>Alignment:</b> <%= @character.alignment %></ul>
-    <ul><b>XP:</b> <%= @character.xp_points %></ul>
-  </div>
-
-  <div class="char-sheet-item">
-    <ul>
-      <h3>Stats</h3>
-    </ul>
-    <ul><b>Strength:</b> <%= @character.strength %>
-      <%= (@character.strength - 10) / 2 %>
-    </ul>
-    <ul><b>Dexterity:</b> <%= @character.dexterity %>
-      <%= (@character.dexterity - 10) / 2 %>
-    </ul>
-    <ul><b>Constitution:</b> <%= @character.constitution %>
-      <%= (@character.constitution - 10) / 2 %>
-    </ul>
-    <ul><b>Intelligence:</b> <%= @character.intelligence %>
-      <%= (@character.intelligence - 10) / 2 %>
-    </ul>
-    <ul><b>Wisdom:</b> <%= @character.wisdom %>
-      <%= (@character.wisdom - 10) / 2 %>
-    </ul>
-    <ul><b>Charisma:</b> <%= @character.charisma %>
-      <%= (@character.charisma - 10) / 2 %>
-    </ul>
-  </div>
-
-  <div class="char-sheet-item">
-    <ul><h3>Proficiency Bonus </h3>+NUM</ul>
-    <ul>
-      <h3>Saving Throws</h3>
-      <table>
-        <tr>
-          <td><%= (@character.strength - 10) / 2 %></td>
-          <td>Strength</td>
-        </tr>
-        <tr>
-          <td><%= (@character.dexterity - 10) / 2 %></td>
-          <td>Dexterity</td>
-        </tr>
-        <tr>
-          <td><%= (@character.constitution - 10) / 2 %></td>
-          <td>Constitution</td>
-        </tr>
-        <tr>
-          <td><%= (@character.intelligence - 10) / 2 %></td>
-          <td>Intelligence</td>
-        </tr>
-        <tr>
-          <td><%= (@character.wisdom - 10) / 2 %></td>
-          <td>Wisdom</td>
-        </tr>
-        <tr>
-          <td><%= (@character.charisma - 10) / 2 %></td>
-          <td>Charisma</td>
-        </tr>
-      </table>
-    </ul>
-    <ul>
-      <h3>Skills</h3>
-      <table>
-        <tr>
-          <td><%= (@character.dexterity - 10) / 2 %></td>
-          <td>Acrobatics</td>
-        </tr>
-        <tr>
-          <td><%= (@character.wisdom - 10) / 2 %></td>
-          <td>Animal Handling</td>
-        </tr>
-        <tr>
-          <td><%= (@character.intelligence - 10) / 2 %></td>
-          <td>Arcana</td>
-        </tr>
-        <tr>
-          <td><%= (@character.strength - 10) / 2 %></td>
-          <td>Athletics</td>
-        </tr>
-        <tr>
-          <td><%= (@character.charisma - 10) / 2 %></td>
-          <td>Deception</td>
-        </tr>
-        <tr>
-          <td><%= (@character.intelligence - 10) / 2 %></td>
-          <td>History</td>
-        </tr>
-        <tr>
-          <td><%= (@character.wisdom - 10) / 2 %></td>
-          <td>Insight</td>
-        </tr>
-        <tr>
-          <td><%= (@character.charisma - 10) / 2 %></td>
-          <td>Intimidation</td>
-        </tr>
-        <tr>
-          <td><%= (@character.intelligence - 10) / 2 %></td>
-          <td>Investigation</td>
-        </tr>
-        <tr>
-          <td><%= (@character.wisdom - 10) / 2 %></td>
-          <td>Medicine</td>
-        </tr>
-        <tr>
-          <td><%= (@character.intelligence - 10) / 2 %></td>
-          <td>Nature</td>
-        </tr>
-        <tr>
-          <td><%= (@character.wisdom - 10) / 2 %></td>
-          <td>Perception</td>
-        </tr>
-        <tr>
-          <td><%= (@character.charisma - 10) / 2 %></td>
-          <td>Performance</td>
-        </tr>
-        <tr>
-          <td><%= (@character.charisma - 10) / 2 %></td>
-          <td>Persuasion</td>
-        </tr>
-        <tr>
-          <td><%= (@character.intelligence - 10) / 2 %></td>
-          <td>Religion</td>
-        </tr>
-        <tr>
-          <td><%= (@character.dexterity - 10) / 2 %></td>
-          <td>Sleight of Hand</td>
-        </tr>
-        <tr>
-          <td><%= (@character.dexterity - 10) / 2 %></td>
-          <td>Stealth</td>
-        </tr>
-        <tr>
-          <td><%= (@character.wisdom - 10) / 2 %></td>
-          <td>Survival</td>
-        </tr>
-      </table>
-    </ul>
-  </div>
-
-  <div class="char-sheet-item">
-    <ul>
-      <h3>Proficiencies and Languages</h3>
-    </ul>
-    <div style="width:600px; height:200px; line-height:1em; overflow:auto; padding:5px;">
-      <ul><b>Armour:</b> <%= @character.armour_profs %></ul>
-      <ul><b>Weapons:</b> <%= @character.weapon_profs %></ul>
-      <ul><b>Tools:</b> <%= @character.tool_profs %></ul>
-      <ul><b>Saving Throws:</b> <%= @character.saving_throw_profs %></ul>
-      <ul><b>Skills:</b> <%= @character.skill_profs %></ul>
-      <ul><b>Languages:</b> <%= @character.language_profs %></ul>
-    </div>
-  </div>
-
-  <div class="char-sheet-item">
-    <ul><b>AC:</b> <%= @character.armour_class %></ul>
-    <ul><b>Initiative:</b> <%= @character.initiative %></ul>
-    <ul><b>Speed:</b> <%= @character.speed %></ul>
-  </div>
-
-  <div class="char-sheet-item">
-    <ul><b>Max HP:</b> <%= @character.hp_max %></ul>
-    <ul><b>Current HP:</b> <%= @character.current_hp %></ul>
-    <ul><b>Temporary HP:</b> <%= @character.temp_hp %></ul>
-  </div>
-
-  <div class="char-sheet-item">
-    <ul><b>Total Hit Dice:</b> <%= @character.total_hit_dice %></ul>
-    <ul><b>Current Hit Dice:</b> <%= @character.current_hit_dice %></ul>
-    <ul><b>Death Saves:</b> <%= @character.death_saves %></ul>
-  </div>
-
-  <div class="char-sheet-item">
-    <ul>
-      <h3>Attacks and Spells</h3>
-    </ul>
-    <ul>Weapons: <%= @character.weapons %></ul>
-    <ul>
-      <div style="width:600px; height:100px; line-height:1em; overflow:auto; padding:5px;">
-        <%= @character.other_attacks_and_spells %>
-      </div>
-    </ul>
-  </div>
-
-  <div class="char-sheet-item">
-    <ul>
-      <h3>Equipment</h3>
-    </ul>
-    <ul>cp: <%= @character.cp %></ul>
-    <ul>sp: <%= @character.sp %></ul>
-    <ul>ep: <%= @character.ep %></ul>
-    <ul>gp: <%= @character.gp %></ul>
-    <ul>pp: <%= @character.pp %></ul>
-    <ul>
-      <div style="width:600px; height:100px; line-height:1em; overflow:auto; padding:5px;">
-        <%= @character.other_equipment %>
-      </div>
-    </ul>
-  </div>
-
-  <div class="char-sheet-item">
-    <ul>
-      <h3>Character Details</h3>
-    </ul>
-    <ul>
-      <div style="width:600px; height:100px; line-height:1em; overflow:auto; padding:5px;">
-        <b>Personality:</b> <%= @character.personality %>
-      </div>
-      <div style="width:600px; height:100px; line-height:1em; overflow:auto; padding:5px;">
-        <b>Ideals:</b> <%= @character.ideals %>
-      </div>
-      <div style="width:600px; height:100px; line-height:1em; overflow:auto; padding:5px;">
-        <b>Bonds:</b> <%= @character.bonds %>
-      </div>
-      <div style="width:600px; height:100px; line-height:1em; overflow:auto; padding:5px;">
-        <b>Flaws:</b> <%= @character.flaws %>
-      </div>
-    </ul>
-  </div>
-
-  <div class="char-sheet-item">
-    <ul>
-      <h3>Features and Traits</h3>
-    </ul>
-    <ul>
-      <div style="width:600px; height:200px; line-height:1em; overflow:auto; padding:5px;">
-        <%= @character.features %>
-      </div>
-    </ul>
   </div>
 
 </div>
