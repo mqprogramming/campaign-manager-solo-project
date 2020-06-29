@@ -1,34 +1,50 @@
-<h1>Campaign List</h1>
+<div class="container">
 
-<div id="scrollbox">
+  <div>
+    <h1 style="padding-bottom: 0.2em; text-align: center;">Campaign List</h1>
+  </div>
+
+  <form action="/campaigns/new" method="get" style="text-align: center; padding: 0.5em; margin-bottom: 1em">
+    <button type="submit" class="btn btn-default btn-lg">
+      Create New Campaign
+    </button>
+  </form>
+
   <% for campaign in @campaigns %>
-    <p>
-      <ul class="general">
-        <b>Name:</b> <%= campaign.name %>
-      </ul>
-      <ul class="general">
-        <h4>Characters</h4>
-      </ul>
-      <% for character in campaign.characters() %>
-      <ul class="general">
-        <a href="/characters/<%= character.id %>"><%= character.name %></a>
-      </ul>
-      <% end %>
-      <ul>
+    <div class="row" style="padding:1em;">
+      <div class="col-md-3">
+        <h4><i><%= campaign.name %></i></h4>
+      </div>
+      <div class="col-md-6" style="text-align:center;">
+        <div class="panel-group">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-target="#<%= campaign.id %>">Characters <span class="glyphicon glyphicon glyphicon-menu-down" style="text-align:right;"></span></a>
+              </h4>
+            </div>
+            <div id="<%= campaign.id %>" class="panel-collapse collapse">
+              <% for character in campaign.characters() %>
+                <ul class="list-group">
+                  <li class="list-group-item"><a href="/characters/<%= character.id %>"><%= character.name %></a></li>
+                </ul>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3" style="text-align:center;">
         <form action="/campaigns/<%= campaign.id %>" method="get">
-          <button type="submit">View Campaign</button>
+          <button type="submit" class="btn btn-default" style="margin:0.2em">View Campaign</button>
         </form>
         <form action="/campaigns/<%= campaign.id %>/delete" method="post">
-          <button type="submit">Delete Campaign</button>
+          <button type="submit" class="btn btn-default" style="margin:0.2em">Delete Campaign</button>
         </form>
-      </ul>
-    </p>
+      </div>
+
+    </div>
     <hr>
   <% end %>
+      
 </div>
-
-<form action="/campaigns/new" method="get" style="margin-left:45%">
-  <button type="submit" class="button">
-    Create New Campaign
-  </button>
-</form>
