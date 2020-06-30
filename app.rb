@@ -1,5 +1,5 @@
 require('sinatra')
-require('sinatra/contrib/all')
+require('sinatra/contrib/all') if development?
 require('sinatra/twitter-bootstrap')
 
 require_relative('controllers/campaign_controller.rb')
