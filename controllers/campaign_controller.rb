@@ -1,12 +1,12 @@
 require('sinatra')
-require('sinatra/contrib/all')
+require('sinatra/contrib/all') if development?
 
 require_relative('../db/sql_runner.rb')
 require_relative('../models/character.rb')
 require_relative('../models/campaign.rb')
 require_relative('../models/assignment.rb')
 
-also_reload('../models/*')
+# also_reload('../models/*')
 
 # Index
 get '/campaigns' do
